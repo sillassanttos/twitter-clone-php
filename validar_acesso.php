@@ -18,7 +18,15 @@
 
         $dados_usuario = mysqli_fetch_array($resultado_id);
 
-        var_export( $dados_usuario );
+       if (isset($dados_usuario['usuario'])) {
+
+
+
+       } else {
+
+            header('Location: index.php?erro=1');
+
+       }
 
     } else {
 
