@@ -23,15 +23,11 @@
 
 
        } else {
-
             header('Location: index.php?erro=1');
-
        }
 
     } else {
-
         echo 'Erro ao efetuar consulta no banco de dados';
-
     }
 
 ?>
