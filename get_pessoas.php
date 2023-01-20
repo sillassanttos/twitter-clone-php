@@ -16,10 +16,14 @@
     
     $link = $objDb -> conecta_mysql();
 
-    $sql  = "select * ";
-    $sql .= "  from usuarios ";
-    $sql .= " where id <> '$id_usuario' ";
-    $sql .= "   and usuario like '%$nome_pessoa%' ";
+    $sql  = " select u.*, us.id as id_usuario_seguidor ";
+    $sql .= "   from usuarios u  ";
+    $sql .= "   left ";
+    $sql .= "   join usuarios_seguidores us ";
+    $sql .= "     on us.id_usuario = $id_usuario ";
+    $sql .= "    and u.id = us.id_usuario_seguindo ";
+    $sql .= "  where u.usuario LIKE '%$nome_pessoa%' ";
+    $sql .= "    and u.id <> $id_usuario ";
 
     $resultado_id = mysqli_query($link, $sql); 
 
@@ -27,11 +31,22 @@
 
         while ($registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)) {
 
+            $seguindo = isset($registro['id_usuario_seguidor']) && !empty($registro['id_usuario_seguidor']) ? 'S' : 'N';
+
+            $btn_seguir_display = 'block';
+            $btn_deixar_seguir_display = 'block';
+
+            if ($seguindo == 'N') {
+                $btn_deixar_seguir_display = 'none';
+            } else {
+                $btn_seguir_display = 'none';
+            }
+
             echo '<a href="#" class="list-group-item">';
             echo '  <strong>' . $registro['usuario'] . '</strong> <small> - ' . $registro['email'] . '</small>';
             echo '  <p class="list-group-item-text pull-right">';
-            echo '      <button type="button" class="btn btn-default btn_seguir" data-id_usuario="' . $registro['id'] . '">Seguir</button>';
-            echo '      <button type="button" class="btn btn-primary btn_deixar_seguir" data-id_usuario="' . $registro['id'] . '">Deixar de Seguir</button>';
+            echo '      <button id="btn_seguir_' . $registro['id'] . '" type="button" style="display: '. $btn_seguir_display .'" class="btn btn-default btn_seguir" data-id_usuario="' . $registro['id'] . '">Seguir</button>';
+            echo '      <button id="btn_deixar_seguir_' . $registro['id'] . '" type="button" style="display: '. $btn_deixar_seguir_display .'" class="btn btn-primary btn_deixar_seguir" data-id_usuario="' . $registro['id'] . '">Deixar de Seguir</button>';
             echo '  </p>';
             echo '  <div class="clearfix"></div>';
             echo '</a>';
