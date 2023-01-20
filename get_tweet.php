@@ -22,6 +22,9 @@
     $sql .= "  join usuarios u ";
     $sql .= "    on t.id_usuario = u.id ";
     $sql .= " where t.id_usuario = $id_usuario ";
+    $sql .= "    or t.id_usuario in ( select id_usuario_seguindo ";
+    $sql .= "                           from usuarios_seguidores";
+    $sql .= "                          where id_usuario = $id_usuario ) ";
     $sql .= " order ";
     $sql .= "    by t.data_inclusao desc ";
 
