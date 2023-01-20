@@ -16,4 +16,10 @@ CREATE TABLE `twitter_clone`.`tweet` (
     PRIMARY KEY (`id`) 
 ); 
 
+CREATE TABLE `twitter_clone`.`usuarios_seguidores` ( 
+    `id` INT(11) NOT NULL AUTO_INCREMENT, 
+    `id_usuario` INT(11) NOT NULL, 
+    `id_usuario_seguindo` INT(11) NOT NULL, 
+    `data_registro` DATETIME DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`) 
+); 
 

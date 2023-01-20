@@ -16,9 +16,28 @@ $(document).ready(function() {
 
                     $('#pessoas').html(data);
 
-                    // $('#texto_tweet').val('');
+                    $('.btn_seguir').click(function() {
 
-                    // $('#texto_tweet').focus();
+                        // data-id_usuario
+                        var id_usuario = $(this).data('id_usuario');
+
+                        $.ajax({
+
+                            url: 'seguir.php',
+
+                            method: 'post',
+
+                            data: { seguir_id_usuario: id_usuario },
+
+                            success : function(data) {
+
+                                console.log(data);
+
+                            }
+
+                        });
+
+                    });
 
                 }
 
