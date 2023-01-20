@@ -14,6 +14,8 @@ $(document).ready(function() {
 
                 success: function(data) {
 
+                    atualizaTweet();
+
                     $('#texto_tweet').val('');
 
                     $('#texto_tweet').focus();
