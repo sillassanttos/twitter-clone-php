@@ -1,12 +1,6 @@
 <?php
 
-    session_start();
-
-    if (!isset($_SESSION['usuario'])){
-
-        header('Location: index.php?erro=1');
-
-    }
+    require_once('cabecalho.php');
 
 ?>
 
@@ -58,11 +52,11 @@
 						<hr/>
 
 						<div class="col-md-6">
-							TWEETS <br/> 1
+							TWEETS <br/> <?= $qtde_tweets ?>
 						</div>
 
 						<div class="col-md-6">
-							SEGUIDORES <br/> 1
+							SEGUIDORES <br/> <?=$qtde_seguidores ?>
 						</div>
 
 					</div>
