@@ -74,9 +74,9 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="input-group">
-							<input type="text" class="form-control" maxlength="140" placeholder="O que está acontecendo agora?"/>
+							<input id="texto_tweet" type="text" class="form-control" maxlength="140" placeholder="O que está acontecendo agora?"/>
 							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">Tweet</button>
+								<button id="btn_tweet" class="btn btn-default" type="button">Tweet</button>
 							</span>
 						</div>
 					</div>
@@ -96,6 +96,8 @@
 		</div>
 	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<script src="valida_tweet.js"></script>
 	
 	</body>
 </html>
