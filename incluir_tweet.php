@@ -22,9 +22,6 @@
 
     $sql = "insert into tweet(id_usuario, tweet) values ('$id_usuario', '$texto_tweet')";
 
-    echo '<br><br>';
-    echo $sql;
-
     mysqli_query($link, $sql); 
 
 ?>

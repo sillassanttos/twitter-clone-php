@@ -24,6 +24,26 @@ $(document).ready(function() {
 
         }
 
-    })
+    });
+
+
+    function atualizaTweet() {
+
+        $.ajax({
+
+            url: 'get_tweet.php',
+
+            success: function(data) {
+
+                $('#tweets').html(data);
+
+            }
+
+        });
+
+    }
+
+
+    atualizaTweet();
 
 });

@@ -67,7 +67,7 @@
 
 					</div>
 				</div>
-			</div>
+			</div><!-- div esquerda -->
 
 
 	    	<div class="col-md-6">
@@ -81,7 +81,9 @@
 						</form>
 					</div>
 				</div>
-			</div>
+
+				<div id="tweets" class="list-group"></div>
+			</div><!-- div central -->
 			
 
 			<div class="col-md-3">
@@ -90,7 +92,7 @@
 						<h4><a href="#">Procurar por pessoas</a></h4>
 					</div>
 				</div>
-			</div>
+			</div><!-- div direita -->
 
 
 		</div>
