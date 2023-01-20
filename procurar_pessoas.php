@@ -42,7 +42,8 @@
 	        
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="sair.php">Sair</a></li>
+	            <li><a href="home.php">Home</a></li>
+                <li><a href="sair.php">Sair</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -73,23 +74,23 @@
 	    	<div class="col-md-6">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<form id="form_tweet" class="input-group">
-							<input id="texto_tweet" type="text" name="texto_tweet" class="form-control" maxlength="140" placeholder="O que está acontecendo agora?"/>
+						<form id="form_procurar_pessoas" class="input-group">
+							<input id="nome_pessoa" type="text" name="nome_pessoa" class="form-control" maxlength="140" 
+                                placeholder="Quem você está procurando?"/>
 							<span class="input-group-btn">
-								<button id="btn_tweet" class="btn btn-default" type="button">Tweet</button>
+								<button id="btn_procurar_pessoa" class="btn btn-default" type="button">Procurar</button>
 							</span>
 						</form>
 					</div>
 				</div>
 
-				<div id="tweets" class="list-group"></div>
+				<div id="pessoas" class="list-group"></div>
 			</div><!-- div central -->
 			
 
 			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h4><a href="procurar_pessoas.php">Procurar por pessoas</a></h4>
 					</div>
 				</div>
 			</div><!-- div direita -->
@@ -99,7 +100,7 @@
 	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-		<script src="valida_tweet.js"></script>
+		<script src="valida_pessoa.js"></script>
 	
 	</body>
 </html>
